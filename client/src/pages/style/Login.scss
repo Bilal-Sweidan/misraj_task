@@ -1,0 +1,21 @@
+*{
+    padding:  0;
+    margin: 0;
+    .main-section{
+        .left-div{
+            background: linear-gradient(#03346E,#6EACDA) !important;
+            border-radius: 0 20px 20px 0;
+            // box-shadow: 10px 5px 10px #6EACDA;
+            > img{
+                filter: drop-shadow(10px 7px 5px #333) ;
+            }
+            // background-color: #33333360;
+        }
+        .right-div{
+            .no-account{
+                font-family: Arial, Helvetica, sans-serif;
+                color: #666;
+            }
+        }
+    }
+}
