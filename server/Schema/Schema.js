@@ -22,8 +22,6 @@ const Capsules_Schema = mongoose.Schema({
         type: String,
         required: true,
         trim: true,
-        lowercase: true,
-        unique : true
     },
     text_content : {
         type: String,
@@ -42,9 +40,8 @@ const Capsules_Schema = mongoose.Schema({
         type : Boolean,
         default : false
     },
-    release_link : {
+    image : {
         type : String,
-        trim : true
     }
 })
 

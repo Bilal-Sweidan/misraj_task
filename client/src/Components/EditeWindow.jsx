@@ -13,7 +13,7 @@ import Card from 'react-bootstrap/Card';
 // react icons
 import { MdClose } from "react-icons/md";
 
-export default function Create_Capsule_Window({ get_capsules , setEditWindow , capsule_info}) {
+export default function Create_Capsule_Window({ get_capsules, setEditWindow, capsule_info }) {
 
     const currentDate = new Date().toISOString().substring(0, 10)
     const currentTime = new Date().toISOString().substring(11, 16);
@@ -21,9 +21,9 @@ export default function Create_Capsule_Window({ get_capsules , setEditWindow , c
     async function fetch_data(e) {
         const form_data = e.target
         const formData = new FormData(form_data)
-        formData.append('capsule_id' , capsule_info?._id)
+        formData.append('capsule_id', capsule_info?._id)
         const jsonForm = Object.fromEntries(formData.entries())
-        const { data } = await axios.put('http://localhost:3000/capsule/edit', jsonForm)
+        const { data } = await axios.put('http://localhost:3000/capsule/edit', formData)
         if (data.success) {
             setEditWindow(false)
             get_capsules()
@@ -46,10 +46,15 @@ export default function Create_Capsule_Window({ get_capsules , setEditWindow , c
                         </div>
 
                         <div className='mb-3'>
+                            <label htmlFor="" className='mb-2 text-capitalize'>upload an image :</label>
+                            <input type="file" name="image" id="" style={{ width: "calc( 100% - 24px * 2)" }} className='mx-4 form-control' placeholder='upload image' />
+                        </div>
+
+                        <div className='mb-3'>
                             <label htmlFor="" className='mb-2 text-capitalize'>release Date :</label><br />
                             <div className='d-flex'>
                                 <input type="date" name="day" min={currentDate} id="" className='mx-4 form-control' />
-                                <input type="time" name="time" id="" className='mx-4 form-control' defaultValue={capsule_info?.release_time}/>
+                                <input type="time" name="time" id="" className='mx-4 form-control' defaultValue={capsule_info?.release_time} />
                             </div>
                         </div>
                         <div className='mt-4 d-flex justify-content-end px-4'>

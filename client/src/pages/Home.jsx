@@ -1,11 +1,9 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { Link } from 'react-router';
 
 // react bootstrap
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Card from 'react-bootstrap/Card';
 // context 
 import UserContext from '../Contexts/Context';
@@ -29,7 +27,8 @@ function Create_Capsule_Window({ setWindow, get_capsules }) {
         const formData = new FormData(form_data)
         formData.append("userId", user._id)
         const jsonForm = Object.fromEntries(formData.entries())
-        const { data } = await axios.post('http://localhost:3000/capsule/create', jsonForm)
+        console.log(jsonForm)
+        const { data } = await axios.post('http://localhost:3000/capsule/create', formData)
         if (data.success) {
             setWindow(false)
             get_capsules()
@@ -49,6 +48,11 @@ function Create_Capsule_Window({ setWindow, get_capsules }) {
                         <div className='mb-3'>
                             <label htmlFor="" className='mb-2 text-capitalize'>Content :</label>
                             <textarea name="text_content" id="" className='mx-4 form-control' style={{ width: "calc( 100% - 24px * 2)" }} placeholder='content'></textarea>
+                        </div>
+
+                        <div className='mb-3'>
+                            <label htmlFor="" className='mb-2 text-capitalize'>upload an image :</label>
+                            <input type="file" name="image" id="" style={{ width: "calc( 100% - 24px * 2)" }} className='mx-4 form-control' placeholder='upload image' />
                         </div>
 
                         <div className='mb-3'>

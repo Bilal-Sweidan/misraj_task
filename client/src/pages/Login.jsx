@@ -23,7 +23,7 @@ export default function Login() {
             {
                     <section className="main-section d-flex">
                         <div className="left-div col-6 vh-100 bg-primary d-flex align-items-center justify-content-center">
-                            <img src="" alt="" className='w-75 h-75' />
+                            
                         </div>
                         <div className="right-div d-flex align-items-center justify-content-center col-6">
                             <div className='w-75 h-75 px-3'>

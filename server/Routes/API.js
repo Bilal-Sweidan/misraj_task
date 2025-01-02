@@ -4,11 +4,11 @@ const env = require('dotenv').config()
 const router = express.Router()
 
 const { Capsules, Accounts } = require('../Schema/Schema')
-router.post('/capsules', async (req, res) => {
+const  checkCapsuleStatus  = require('../modules/CheckCapsule')
+router.post('/capsules',checkCapsuleStatus, async (req, res) => {
     const {user_id} = req.body
     try {
         const {capsules} = await Accounts.findOne({ _id: user_id })
-        console.log(capsules)
         const capsule = await Capsules.find({ _id: capsules })
         res.status(200).json(capsule)
     } catch (err) {
