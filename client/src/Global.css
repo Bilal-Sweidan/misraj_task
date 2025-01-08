@@ -1,5 +1,6 @@
 body{
     cursor: url('../public/cursor.png'),auto;
+    background-color: #00101C;
 }
 .pointer{
     cursor: pointer;

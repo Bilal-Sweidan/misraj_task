@@ -24,7 +24,7 @@ export default function CapsulePage() {
         <main className='vh-100 d-flex align-items-center'>
             {
                 isLoading ? <Loading /> :
-                    <div className='w-100 vh-100 text-bg-dark '>
+                    <div className='w-100 vh-100 '>
                         <div className='card w-50 m-auto mt-3' style={{height : "90vh"}}>
                             <h1 className=' text-capitalize text-center'>{capsule?.title}</h1>
                             <div className='text-center'>

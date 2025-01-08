@@ -11,6 +11,7 @@ import UserContext from '../Contexts/Context';
 import axios from 'axios';
 // react icons
 import { MdClose } from "react-icons/md";
+import { GiHealthCapsule } from "react-icons/gi";
 // component
 import Capsule_card from '../Components/Capsule_card';
 import EditeWindow from '../Components/EditeWindow'
@@ -76,8 +77,8 @@ function Create_Capsule_Window({ setWindow, get_capsules }) {
 export default function Home() {
     const { logout, user } = useContext(UserContext)
     const [window, setWindow] = useState()
-    const [editWindow,setEditWindow] = useState()
-    const [capsule_info,setCapsule_info] = useState()
+    const [editWindow, setEditWindow] = useState()
+    const [capsule_info, setCapsule_info] = useState()
 
     const [isLoading, setLoading] = useState(false)
     const [capsules, setCapsules] = useState([])
@@ -97,9 +98,9 @@ export default function Home() {
     }, [])
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary position-relative" data-bs-theme="dark">
+            <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary position-relative" data-bs-theme="dark" >
                 <Container>
-                    <Navbar.Brand href="#home">Time Capsule Platform </Navbar.Brand>
+                    <Navbar.Brand href="#home"><GiHealthCapsule size={"30px"} /> Time Capsule Platform </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav" className='d-flex justify-content-end'>
                         <Nav>
@@ -112,20 +113,22 @@ export default function Home() {
                 </Container>
             </Navbar>
 
-            <section className=''>
-                <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary w-75 m-auto" data-bs-theme="light">
+            <section className='home-body'>
+                {/* <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary w-75 m-auto" data-bs-theme="light">
                     <Container>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav>
-                                {/* <Nav.Link href="#deets">More deets</Nav.Link> */}
                                 <Nav.Link eventKey={2} onClick={(e) => setWindow(!window)} className='text-capitalize btn btn-primary'>
                                     create capsule
                                 </Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
-                </Navbar>
+                </Navbar> */}
+                <button onClick={(e) => setWindow(!window)} className='text-capitalize btn btn-primary position-fixed d-flex align-items-center gap-2' style={{ right: "20px", bottom: "20px" }}>
+                    <GiHealthCapsule size={"30px"} /> create capsule
+                </button>
                 {
                     window && <Create_Capsule_Window setWindow={setWindow} get_capsules={get_capsules} />
                 }

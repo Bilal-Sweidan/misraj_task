@@ -1,10 +1,8 @@
 import './style/Login.scss'
 
-import axios from 'axios'
 import { useContext, useEffect, useState } from 'react';
 import UserContext from '../Contexts/Context';
 import { Link, useNavigate, Navigate, useLocation } from 'react-router-dom';
-import { useCookies } from 'react-cookie'
 // icons
 import { IoLogInOutline } from "react-icons/io5";
 import { PiHandWavingDuotone } from "react-icons/pi";
