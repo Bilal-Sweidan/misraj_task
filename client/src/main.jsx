@@ -1,18 +1,21 @@
+import { useContext } from 'react';
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider, Navigate, useLocation } from 'react-router'
-import { useContext } from 'react';
 // bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 // pages
 import Login from './pages/Login'
-import Registration from './pages/registration'
+import Registration from './pages/Registration'
 import Home from './pages/Home';
 import CapsulePage from './pages/CapsulePage';
 
 // context 
 import UserContext, { UserProvider } from './Contexts/Context';
 
+// css files
+import './Fonts.css'  /// fonts css file
+import './Global.css'  /// global css file
 
 const router = createBrowserRouter([
   {
@@ -21,15 +24,15 @@ const router = createBrowserRouter([
   },
   {
     path: '/login',
-    element: <no_user><Login /></no_user> 
+    element: <no_user><Login /></no_user>
   },
   {
     path: "/registration",
-    element: <no_user><Registration /></no_user> 
+    element: <no_user><Registration /></no_user>
   },
   {
     path: '/capsule/:capsule_id',
-    element : <CapsulePage />
+    element: <CapsulePage />
   }
 ])
 

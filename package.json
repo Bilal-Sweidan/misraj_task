@@ -2,5 +2,9 @@
   "dependencies": {
     "express": "^4.21.2",
     "init": "^0.1.2"
+  },
+  "scripts": {
+    "client" : "cd client && npm run dev",
+    "server": "cd server && npm run dev"
   }
 }

@@ -1,0 +1,24 @@
+@font-face {
+    font-family: BebasNeue-Regular;
+    src: url(../public/font/BebasNeue-Regular.ttf);
+}
+
+@font-face {
+    font-family: EduAUVICWANTHand-VariableFont_wght;
+    src: url(../public/font/EduAUVICWANTHand-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: ProtestGuerrilla-Regular;
+    src: url(../public/font/ProtestGuerrilla-Regular.ttf);
+}
+
+@font-face {
+    font-family: Sevillana-Regular;
+    src: url(../public/font/Sevillana-Regular.ttf);
+}
+
+@font-face {
+    font-family: SUSE-VariableFont_wght;
+    src: url(../public/font/SUSE-VariableFont_wght.ttf);
+}
