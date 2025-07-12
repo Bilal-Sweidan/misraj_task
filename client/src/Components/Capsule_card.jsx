@@ -27,7 +27,7 @@ export default function Capsule_card({ capsules, get_capsules, setEditWindow, se
                             <h3 className='text-capitalize'>{capsule?.title}</h3>
                             {
                                 capsule.image &&
-                                <img src={`/images/${capsule?.image}`} className='mb-3 rounded' alt="" />
+                                <img src={`${import.meta.env.VITE_API_URL}/uploads/images/${capsule?.image}`} className='mb-3 rounded' alt={`${import.meta.env.VITE_API_URL}/uploads/images/${capsule?.image}`} />
                             }
                             <p>{capsule?.text_content}</p>
                         </div>

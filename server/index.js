@@ -6,7 +6,7 @@ const session = require("express-session")
 const mongoose = require("mongoose")
 const jwt = require('jsonwebtoken')
 const cookieParser = require('cookie-parser')
-
+const path = require('path')
 const app = express()
 app.use(express.urlencoded())
 app.use(express.json())
@@ -23,6 +23,8 @@ app.use(session({
     saveUninitialized: false
 }))
 
+// get access to my images
+app.use('/uploads/images', express.static(path.join(__dirname, 'uploads/images')))
 // data base Schema
 const { Accounts } = require('./Schema/Schema')
 // modules

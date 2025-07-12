@@ -39,7 +39,7 @@ export default function Timer({ text_content, deadline, timeLine, get_capsules_d
                 capsuleStatus ?
                     <div>
                         {
-                            image && <img src={`/images/${image}`} className="w-100" alt="" />
+                            image && <img src={`${import.meta.env.VITE_API_URL}/uploads/images/${image}`} className="w-100" alt={`${import.meta.env.VITE_API_URL}/uploads/images/${image}`} />
                         }
                         <p className="" style={{ fontSize: "25px" }}>{text_content}</p>
                     </div> 
